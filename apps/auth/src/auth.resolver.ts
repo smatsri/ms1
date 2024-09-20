@@ -22,7 +22,7 @@ export class GetTokenResponse {
   token?: string;
 }
 
-@Resolver()
+@Resolver("auth")
 export class AuthResolver {
 
   @Query(() => String)
@@ -31,8 +31,8 @@ export class AuthResolver {
   }
 
   @Mutation(() => GetTokenResponse) // Corrected output type for mutation
-  async getToken(@Args('input') req: GetTokenRequest): Promise<GetTokenResponse> {
-    if (req.username === 'test' && req.password === 'test') {
+  async authGetToken(@Args('input') req: GetTokenRequest): Promise<GetTokenResponse> {
+    if (req.username === 'admin' && req.password === '123456') {
       return {
         success: true,
         errorMessage: 'login successful',
