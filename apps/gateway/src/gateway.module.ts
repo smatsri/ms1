@@ -14,6 +14,10 @@ import { GraphQLModule } from '@nestjs/graphql';
               name: 'auth',
               url: 'http://localhost:4001/graphql',
             },
+            {
+              name: 'users',
+              url: 'http://localhost:4002/graphql',
+            }
           ],
         }),
         pollIntervalInMs: 10000,
