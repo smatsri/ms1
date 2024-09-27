@@ -1,6 +1,6 @@
 import { Module } from '@nestjs/common';
+import { ApolloFederationDriver, ApolloFederationDriverConfig } from '@nestjs/apollo';
 import { GraphQLModule } from '@nestjs/graphql';
-import { ApolloFederationDriverConfig, ApolloFederationDriver } from '@nestjs/apollo';
 import { AuthResolver } from './auth.resolver';
 
 @Module({
@@ -11,8 +11,11 @@ import { AuthResolver } from './auth.resolver';
         federation: 2
       },
     }),
+
   ],
-  controllers: [],
   providers: [AuthResolver],
+  exports: [AuthResolver],
 })
-export class AuthModule { }
+export class AuthFederationModule {
+
+}
