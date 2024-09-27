@@ -1,5 +1,5 @@
 import { NestFactory } from '@nestjs/core';
-import { AuthFederationModule } from '@app/auth-lib';
+import { AuthFederationModule } from './auth.module';
 
 async function bootstrap() {
   const app = await NestFactory.create(AuthFederationModule);
