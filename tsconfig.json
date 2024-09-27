@@ -23,6 +23,12 @@
       ],
       "@app/auth-lib/*": [
         "libs/auth-lib/src/*"
+      ],
+      "@app/users": [
+        "libs/users/src"
+      ],
+      "@app/users/*": [
+        "libs/users/src/*"
       ]
     }
   }

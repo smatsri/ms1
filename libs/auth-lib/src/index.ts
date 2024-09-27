@@ -1,1 +1,4 @@
-export * from './auth-fed.module';
+import { AuthResolver } from './auth.resolver';
+
+
+export const resolvers = [AuthResolver];
