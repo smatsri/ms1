@@ -1,1 +1,4 @@
-export * from './users.module';
+import { UsersResolver } from './resolvers/users.resolver';
+
+
+export const resolvers = [UsersResolver];
