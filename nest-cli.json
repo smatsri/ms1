@@ -63,6 +63,15 @@
       "compilerOptions": {
         "tsConfigPath": "apps/users-service/tsconfig.app.json"
       }
+    },
+    "backend": {
+      "type": "application",
+      "root": "apps/backend",
+      "entryFile": "main",
+      "sourceRoot": "apps/backend/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/backend/tsconfig.app.json"
+      }
     }
   }
 }
