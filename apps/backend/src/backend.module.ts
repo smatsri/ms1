@@ -1,10 +1,19 @@
 import { Module } from '@nestjs/common';
-import { BackendController } from './backend.controller';
-import { BackendService } from './backend.service';
+import { GraphQLModule } from '@nestjs/graphql';
+import { ApolloDriver, ApolloDriverConfig } from '@nestjs/apollo';
+import { AuthModule } from '@app/auth-lib/auth.module';
+import { UsersModule } from '@app/users/users.module';
 
 @Module({
-  imports: [],
-  controllers: [BackendController],
-  providers: [BackendService],
+  imports: [
+    GraphQLModule.forRoot<ApolloDriverConfig>({
+      driver: ApolloDriver,
+      autoSchemaFile: true,
+    }),
+    UsersModule,
+    AuthModule,
+  ],
+
+
 })
-export class BackendModule {}
+export class BackendModule { }

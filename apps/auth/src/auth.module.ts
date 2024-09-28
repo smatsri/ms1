@@ -1,7 +1,7 @@
 import { Module } from '@nestjs/common';
 import { ApolloFederationDriver, ApolloFederationDriverConfig } from '@nestjs/apollo';
 import { GraphQLModule } from '@nestjs/graphql';
-import { resolvers } from '@app/auth-lib';
+import { AuthModule } from '@app/auth-lib/auth.module';
 
 @Module({
   imports: [
@@ -10,12 +10,12 @@ import { resolvers } from '@app/auth-lib';
       autoSchemaFile: {
         federation: 2
       },
+      include: [AuthModule]
     }),
 
   ],
-  providers: [...resolvers],
-  exports: [...resolvers],
+
 })
-export class AuthFederationModule {
+export class AuthSericeModule {
 
 }

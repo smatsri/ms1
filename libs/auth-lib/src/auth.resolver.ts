@@ -3,7 +3,7 @@ import { GetTokenRequest, GetTokenResponse } from './auth.dto';
 
 
 
-@Resolver("auth")
+@Resolver()
 export class AuthResolver {
 
   @Query(() => String)
